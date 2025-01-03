@@ -19,6 +19,13 @@ const CardWrapper = styled.div`
   }
 `
 
+const CardTitle = styled.span`
+  color: black;
+  font-size: 22px;
+  font-weight: normal;
+  align-self: center;
+`
+
 const CardLabel = styled.span`
   color: #5843e4;
   font-size: 22px;
@@ -37,7 +44,7 @@ function Card({ label, title, picture }) {
     <CardWrapper>
       <CardLabel>{label}</CardLabel>
       <CardImage src={picture} alt="freelance"/>
-      <span>{title}</span>
+      <CardTitle>{title}</CardTitle>
     </CardWrapper>
   )
 }
