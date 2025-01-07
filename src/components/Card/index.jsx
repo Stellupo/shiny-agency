@@ -13,10 +13,12 @@ const CardWrapper = styled.div`
   border-radius: 30px;
   width: 350px;
   transition: 200ms;
+  height: 300px;
   &:hover {
       cursor: pointer;
       box-shadow: 2px 2px 10px #e2e3e9;
   }
+  
 `
 
 const CardTitle = styled.span`
