@@ -53,7 +53,14 @@ const LoaderWrapper = styled.div`
   justify-content: center;
 `
 
-function formatFetchParams(answers) {
+export function formatJobList(title, listLength, index) {
+  if (index === listLength - 1) {
+    return title
+  }
+  return `${title},`
+}
+
+export function formatFetchParams(answers) {
   const answerNumbers = Object.keys(answers)
 
   return answerNumbers.reduce((previousParams, answerNumber, index) => {
@@ -78,7 +85,7 @@ function Results() {
   const resultsData = data?.resultsData
 
   return isLoading ? (
-    <LoaderWrapper>
+    <LoaderWrapper data-testid="loader">
       <Loader/>
     </LoaderWrapper>
   ) : (
@@ -106,8 +113,10 @@ function Results() {
               theme={theme}
               key={`result-detail-${index}-${result.title}`}
             >
-              <JobTitle theme={theme}>{result.title}</JobTitle>
-              <p>{result.description}</p>
+              <JobTitle data-testid="job-title" theme={theme}>
+                {formatJobList(result.title, resultsData.length, index)}
+              </JobTitle>
+              <p data-testid="job-description">{result.description}</p>
             </JobDescription>
           ))}
       </DescriptionWrapper>
