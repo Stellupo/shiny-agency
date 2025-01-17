@@ -1,4 +1,3 @@
-import '../../App.css'
 import styled from 'styled-components'
 import Illustration from '../../assets/home-illustration.svg'
 import { StyledLink } from '../../utils/style/Atoms'
@@ -33,8 +32,8 @@ function Home() {
     <HomeWrapper>
       <HomerContainer>
         <div className='header-text'>
-          <p >Repérez vos besoins,
-            on s’occupe du reste, avec les meilleurs talents</p>
+          <h2 >Repérez vos besoins,
+            on s’occupe du reste, avec les meilleurs talents</h2>
           <StyledLink to="/survey/1" $isFullLink>
             Faire le test
           </StyledLink>

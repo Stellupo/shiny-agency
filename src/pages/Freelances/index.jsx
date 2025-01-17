@@ -1,10 +1,8 @@
 import Card from '../../components/Card'
 import styled from 'styled-components'
-import { useContext } from 'react'
 import { Loader } from '../../utils/style/Atoms'
 import colors from '../../utils/style/colors'
-import { useFetch } from '../../utils/hooks'
-import { ThemeContext } from '../../utils/context'
+import { useFetch, useTheme } from '../../utils/hooks'
 
 
 const CardsContainer = styled.div`
@@ -36,9 +34,8 @@ const LoaderWrapper = styled.div`
   justify-content: center;
 `
 
-
 function Freelances() {
-  const {theme} = useContext(ThemeContext)
+  const {theme} = useTheme()
 
   const {data, isLoading, error } = useFetch('http://localhost:8000/freelances')
   const freelancersList = data?.freelancersList
