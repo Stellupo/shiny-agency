@@ -1,8 +1,8 @@
-import Card from '../../components/Card'
 import styled from 'styled-components'
 import { Loader } from '../../utils/style/Atoms'
 import colors from '../../utils/style/colors'
 import { useFetch, useTheme } from '../../utils/hooks'
+import Card from '../../classComponents/Card'
 
 
 const CardsContainer = styled.div`
