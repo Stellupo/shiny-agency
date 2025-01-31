@@ -11,6 +11,7 @@ import Freelances from './pages/Freelances'
 import Footer from './components/Footer'
 import GlobalStyle from './utils/style/GlobalStyle'
 import { SurveyProvider, ThemeProvider } from './utils/context'
+import ProfileContainer from './classComponents/ProfileContainer'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,7 +25,11 @@ ReactDOM.render(
             <Route path='/survey/:questionNumber' element={<Survey />} />
             <Route path='/results' element={<Results />} />
             <Route path='/freelances' element={<Freelances />} />
-            <Route path='*' element={<Error />} />
+            <Route
+              path="/profile/:id"
+              element={<ProfileContainer />}
+            />
+            <Route path="*" element={<Error />} />
           </Routes>
         </SurveyProvider>
         <Footer />

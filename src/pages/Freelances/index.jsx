@@ -3,6 +3,7 @@ import { Loader } from '../../utils/style/Atoms'
 import colors from '../../utils/style/colors'
 import { useFetch, useTheme } from '../../utils/hooks'
 import Card from '../../classComponents/Card'
+import { Link } from 'react-router-dom'
 
 
 const CardsContainer = styled.div`
@@ -59,11 +60,13 @@ function Freelances() {
         (
           <CardsContainer>
             {freelancersList && freelancersList?.map((profile, index) => (
-              <Card key={`${profile.name}-${index}`}
-                    label={profile.job}
-                    title={profile.name}
-                    picture={profile.picture}
-              />
+              <Link key={`freelance-${profile.id}`} to={`/profile/${profile.id}`}>
+                <Card key={`${profile.name}-${index}`}
+                      label={profile.job}
+                      title={profile.name}
+                      picture={profile.picture}
+                />
+              </Link>
             ))}
           </CardsContainer>
         )}
